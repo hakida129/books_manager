@@ -38,6 +38,24 @@ app.get("/books/:id/delete", (req, res) =>{
   res.redirect("/books");
 });
 
+app.get("/books/:id/update", (req, res) =>{
+  let id = req.params.id
+  let book = db.get('books')
+  .find({ id: id })
+  .write()
+  res.render("update/index", {
+    book: book
+  })
+});
+
+app.post("books/update", (req, res) => {
+  db.get('books')
+  .find({ title: 'low!' })
+  .assign({ title: req.body.name })
+  .write()
+  res.redirect("/books");
+})
+
 // listen for requests :)
 app.listen(process.env.PORT, () => {
   console.log("Server listening on port " + process.env.PORT);
