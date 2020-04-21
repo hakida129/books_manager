@@ -1,0 +1,10 @@
+h1 User List
+a(href="/users/add") New User
+ul
+    each user in users
+        li
+            span= user.name
+            span &nbsp;
+            a(href="/users/" +user.id +"/delete") Delete
+            span &nbsp;
+            a(href="/users/" +user.id + "/update") Update
