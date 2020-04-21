@@ -1,6 +1,15 @@
 {
-  [
-  {"id": 1, "title":"Nguoi dua dieu", "description":"Hay"},
-  {"id": 2, "title":"Nguoi dua dieu", "description":"Hay"}
+  "books": [
+    {
+      "id": 1,
+      "title": "Nguoi dua dieu",
+      "description": "Hay"
+    },
+    {
+      "id": 2,
+      "title": "Nguoi dua dieu",
+      "description": "Hay"
+    },
+    null
   ]
 }
