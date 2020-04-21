@@ -48,6 +48,15 @@ app.get("/books/:id", (req, res) =>{
   })
 });
 
+app.post("books/update", (req, res) => {
+  let id = req.body.id
+  db.get('books')
+  .find({ id: id })
+  .assign({ title: req.body.title })
+  .write()
+  res.redirect("/books");
+})
+
 // listen for requests :)
 app.listen(process.env.PORT, () => {
   console.log("Server listening on port " + process.env.PORT);
