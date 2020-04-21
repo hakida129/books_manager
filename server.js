@@ -38,17 +38,18 @@ app.get("/books/:id/delete", (req, res) =>{
   res.redirect("/books");
 });
 
-app.get("/books/:id", (req, res) =>{
+app.get("/books/:id/update", (req, res) =>{
   let id = req.params.id
   let book = db.get('books')
   .find({ id: id })
   .write()
   res.render("update/index", {
+    id: id,
     book: book
   })
 });
 
-app.post("books/update", (req, res) => {
+app.post("/books/update", (req, res) => {
   let id = req.body.id
   db.get('books')
   .find({ id: id })
