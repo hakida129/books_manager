@@ -38,7 +38,7 @@ app.get("/books/:id/delete", (req, res) =>{
   res.redirect("/books");
 });
 
-app.get("/books/:id/update", (req, res) =>{
+app.get("/books/:id", (req, res) =>{
   let id = req.params.id
   let book = db.get('books')
   .find({ id: id })
@@ -47,14 +47,6 @@ app.get("/books/:id/update", (req, res) =>{
     book: book
   })
 });
-
-app.post("books/update", (req, res) => {
-  db.get('books')
-  .find({ title: 'low!' })
-  .assign({ title: req.body.name })
-  .write()
-  res.redirect("/books");
-})
 
 // listen for requests :)
 app.listen(process.env.PORT, () => {
