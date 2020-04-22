@@ -1,17 +1,22 @@
 extends ../layouts/common.pug
 
 block content      
-    h2 Transactions
-
-    a(href="transactions/create") Create
-    ul 
+    h2.d-flex.align-items-center 
+        span.mr-3 Transactions
+        a.btn.btn-primary(href="transactions/create") Create
+    table.table
+        tr
+            th UserId
+            th BookId
+            th Check
+            th Complete
         each transaction in transactions
-            li
-                span=transaction.userId
-                span &nbsp;
-                span=transaction.bookId
-                span &nbsp;
-                if transaction.isComplete
-                    p Đã Hoàn Thành
-                else 
-                    a(href="/transactions/" + transaction.id +"/complete") Hoàn thành
+            tr
+                td=transaction.userId
+                td=transaction.bookId
+                td
+                    if transaction.isComplete
+                        p Đã hoàn thành
+                    else    
+                        a(href="/transactions/" + transaction.id +"/complete") Hoàn thành
+                td=transaction.isComplete

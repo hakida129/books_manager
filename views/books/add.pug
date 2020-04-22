@@ -3,8 +3,10 @@ extends ../layouts/common.pug
 block content
   h2 Add new book
   form(action="/books/add" method="post")
-    div(class="form-group") Title
+    div(class="form-group") 
+    lable Title
       input(type="text" name="title" class="form-control")
-    div(class="form-group") Description
+    div(class="form-group") 
+      lable Description
       input(type="text" name="description" class="form-control")
     button(class="btn btn-primary") Add

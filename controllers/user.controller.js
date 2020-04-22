@@ -45,7 +45,7 @@ module.exports.update = (req, res) =>{
     let id = req.params.id;
     res.render("users/update",{
         id: id,
-        book: db.get("users").find({id: id}).value()
+        user: db.get("users").find({id: id}).value()
     });
 }
 
