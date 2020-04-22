@@ -19,3 +19,17 @@ module.exports.postCreate = (req, res) =>{
     db.get('transactions').push(req.body).write();
     res.redirect("/transactions");
 }
+
+module.exports.complete = (req, res) =>{
+    let id = req.params.id;
+    res.render("transactions/complete",{
+        id: id,
+        transaction: db.get('transactions').find({id: id}).value()
+    });
+}
+
+module.exports.postComplete = (req, res) =>{
+    let id = req.body.id;
+    db.get('transactions').find({id: id}).assign({ isComplete: true}).write();
+    res.redirect("/transactions");
+}

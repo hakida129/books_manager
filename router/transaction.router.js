@@ -9,4 +9,8 @@ router.get('/create', controller.create);
 
 router.post('/create', controller.postCreate);
 
+router.get("/:id/complete", controller.complete);
+
+router.post("/complete", controller.postComplete);
+
 module.exports = router;
