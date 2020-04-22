@@ -1,7 +1,10 @@
-h2 Add new book
-form(action="/books/add" method="post")
-  labe Title
-    input(type="text" name="title")
-  labe Description
-    input(type="text" name="description")
-  button Add
+extends ../layouts/common.pug
+
+block content
+  h2 Add new book
+  form(action="/books/add" method="post")
+    div(class="form-group") Title
+      input(type="text" name="title" class="form-control")
+    div(class="form-group") Description
+      input(type="text" name="description" class="form-control")
+    button(class="btn btn-primary") Add

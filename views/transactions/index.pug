@@ -1,14 +1,17 @@
-h2 Transactions
+extends ../layouts/common.pug
 
-a(href="transactions/create") Create
-ul 
-    each transaction in transactions
-        li
-            span=transaction.userId
-            span &nbsp;
-            span=transaction.bookId
-            span &nbsp;
-            if transaction.isComplete
-                p Đã Hoàn Thành
-            else 
-                a(href="/transactions/" + transaction.id +"/complete") Hoàn thành
+block content      
+    h2 Transactions
+
+    a(href="transactions/create") Create
+    ul 
+        each transaction in transactions
+            li
+                span=transaction.userId
+                span &nbsp;
+                span=transaction.bookId
+                span &nbsp;
+                if transaction.isComplete
+                    p Đã Hoàn Thành
+                else 
+                    a(href="/transactions/" + transaction.id +"/complete") Hoàn thành

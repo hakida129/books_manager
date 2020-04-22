@@ -1,7 +1,8 @@
-h1 Hello Do
+extends ./layouts/common.pug
 
-a(href="/books") Books
-span &nbsp;
-a(href="/users") Users
-span &nbsp;
-a(href="/transactions") Transactions
+block content     
+    h1 Hello Do
+    div(class="d-flex flex-column")
+        a(href="/books") Books
+        a(href="/users") Users
+        a(href="/transactions") Transactions

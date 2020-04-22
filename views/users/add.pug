@@ -1,5 +1,8 @@
-h2 Add new user
-form(action="/users/add" method="post")
-    labe Name
-        input(type="text" name="name")
-    button Add
+extends ../layouts/common.pug
+
+block content    
+    h2 Add new user
+    form(action="/users/add" method="post" class="d-flex justify-content-center align-items-center")
+        label Name
+        input(type="text" name="name" class="form-control ml-2")
+        button(class="btn btn-primary ml-2") Add

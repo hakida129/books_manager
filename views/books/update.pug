@@ -1,8 +1,11 @@
-h2 Update title
+extends ../layouts/common.pug
 
-p=book.title
-form(action="/books/update" method="POST")
-  labe New title
-    input(type="hidden" name="id", value=id)
-    input(type="text" name="title")
-    button Update
+block content 
+  h2 Update title
+
+  p=book.title
+  form(action="/books/update" method="POST")
+    labe New title
+      input(type="hidden" name="id", value=id)
+      input(type="text" name="title" class="form-control")
+      button(class="btn btn-primary mt-3") Update
