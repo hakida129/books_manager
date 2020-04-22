@@ -5,6 +5,7 @@ const port = 3000
 
 const bookRouter = require('./router/book.router');
 const userRouter = require('./router/user.router');
+const transactionRouter = require('./router/transaction.router')
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) 
@@ -19,6 +20,7 @@ app.get('/', (req, res) =>{
 
 app.use('/books', bookRouter);
 app.use('/users', userRouter);
+app.use('/transactions', transactionRouter)
 
 // listen for requests :)
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
