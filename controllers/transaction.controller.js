@@ -16,20 +16,19 @@ module.exports.create = (req, res) =>{
 
 module.exports.postCreate = (req, res) =>{
     req.body.id = shortid.generate();
+    req.body.isComplete = false;
+    req.body.userName = db.get("users").find({id: req.body.userId}).value()
+    req.body.bookName = db.get("books").find({id: req.body.bookId}).value()
     db.get('transactions').push(req.body).write();
     res.redirect("/transactions");
 }
 
 module.exports.complete = (req, res) =>{
     let id = req.params.id;
-    res.render("transactions/complete",{
-        id: id,
-        transaction: db.get('transactions').find({id: id}).value()
-    });
-}
-
-module.exports.postComplete = (req, res) =>{
-    let id = req.body.id;
+    if (!db.get('transactions').find({id : id}).value()){
+        res.redirect("/transactions");
+        return;
+    }
     db.get('transactions').find({id: id}).assign({ isComplete: true}).write();
     res.redirect("/transactions");
 }

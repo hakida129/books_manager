@@ -1,7 +1,0 @@
-extends ../layouts/common.pug
-
-block content     
-    h2 Complete
-    form(action="/transactions/complete" method="Post")
-        input(type="hidden" name="id" value=id)
-        button(class="btn btn-primary") Complete
