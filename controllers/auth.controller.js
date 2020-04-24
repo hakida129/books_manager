@@ -1,3 +1,4 @@
+const md5 = require('md5')
 const db = require('../db')
 
 module.exports.auth = (req, res) => {
@@ -12,7 +13,8 @@ module.exports.postAuth = (req, res) =>{
         res.redirect('/auth/login');
         return;
     }
-    if(password !== user.password){
+    let hashedPassword = md5(password);
+    if(hashedPassword !== user.password){
         res.redirect('/auth/login');
         return;
     }

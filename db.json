@@ -17,7 +17,7 @@
       "phone": "0702744434",
       "id": "okBt4dNL2",
       "email": "do.nguyen.tt.1995@gmail.com",
-      "password": "123123",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": false
     },
     {
@@ -25,15 +25,23 @@
       "phone": "1202744434",
       "id": "62KCgi9Zr",
       "email": "ntdo.13cdt1@gmail.com",
-      "password": "123123",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": true
     },
     {
       "name": "Vuong",
       "phone": "0905409257",
       "email": "khanh10nh3@yahoo.com",
-      "password": "123123",
+      "password": "4297f44b13955235245b2497399d7a93",
       "id": "-uqnNiMWf",
+      "isAdmin": false
+    },
+    {
+      "name": "Lap",
+      "phone": "0905409257",
+      "email": "ntdo.13cdt1@gmail.com",
+      "password": "4297f44b13955235245b2497399d7a93",
+      "id": "Mr_uyRJnF",
       "isAdmin": false
     }
   ],
