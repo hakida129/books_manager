@@ -3,7 +3,9 @@ const db = require('../db')
 
 module.exports.index = (req, res) =>{
     res.render("transactions/index",{
-        transactions: db.get('transactions').value()
+        transactions: db.get('transactions').value(),
+        users: db.get('users').value(),
+        books: db.get('books').value()
     })
 }
 
@@ -17,8 +19,6 @@ module.exports.create = (req, res) =>{
 module.exports.postCreate = (req, res) =>{
     req.body.id = shortid.generate();
     req.body.isComplete = false;
-    req.body.userName = db.get("users").find({id: req.body.userId}).value()
-    req.body.bookName = db.get("books").find({id: req.body.bookId}).value()
     db.get('transactions').push(req.body).write();
     res.redirect("/transactions");
 }
@@ -31,4 +31,8 @@ module.exports.complete = (req, res) =>{
     }
     db.get('transactions').find({id: id}).assign({ isComplete: true}).write();
     res.redirect("/transactions");
+}
+
+module.exports.menu = (req, res) =>{
+    res.render("transactions/menu")
 }

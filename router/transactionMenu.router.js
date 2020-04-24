@@ -1,10 +1,8 @@
-const db = require('../db')
+const express = require('express')
+const controller = require('../controllers/transactionMenu.controller')
 
-module.exports.requireRole = (isAdmin) =>{
-    return function (req, res, next){
-        let user = db.get("users").find({id: req.cookies.userId1}).value();
-        if (user.isAdmin === isAdmin){
-            next();
-        } else res.send(403);
-    }
-}
+const router = express.Router()
+
+router.get('/menu', controller.menu)
+
+module.exports = router;

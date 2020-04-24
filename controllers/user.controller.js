@@ -12,7 +12,8 @@ module.exports.add = (req, res) =>{
 }
 
 module.exports.postAdd = (req, res) =>{
-    req.body.id = shortid.generate();
+    req.body.id = shortid.generate(); 
+    req.body.isAdmin = false;   
     db.get('users').push(req.body).write();
     res.redirect("/users");
 }
