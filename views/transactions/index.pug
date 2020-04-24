@@ -25,8 +25,12 @@ block content
                 td(rowspan="2")=transaction.isComplete
             tr    
                 th User Name
-                td=transaction.userName.name
+                each user in users
+                    if(transaction.userId === user.id)
+                        td=user.name
                 th Book Name
-                td=transaction.bookName.title
+                each book in books
+                    if(transaction.bookId === book.id)
+                        td=book.title
 
 
