@@ -30,7 +30,6 @@ app.get('/', (req, res) =>{res.render("index")})
 
 app.use(express.static('public'))
 
-
 app.use('/auth', authRouter);
 app.use('/books', authMiddleware.authRequire, adminMiddleware.requireRole(true), bookRouter);
 app.use('/users', authMiddleware.authRequire, adminMiddleware.requireRole(true), userRouter);

@@ -603,10 +603,10 @@
   ],
   "users": [
     {
-      "name": "Do",
+      "name": "hakida",
       "phone": "0702744434",
       "id": "62KCgi9Zr",
-      "email": "ntdo.13cdt1@gmail.com",
+      "email": "admin@book.com",
       "password": "$2b$10$IcWQPXGvmR6dikh.CAjnJesEMeByzeaagssGv4UuNH65NvFZrTQZW",
       "isAdmin": true,
       "wrongLoginCount": 0,
@@ -1624,6 +1624,14 @@
         "4f809b3f-ace4-4bf5-a131-45cf715016bd": 1,
         "69d22e7c-9591-4747-922d-f68135f2b32d": 1,
         "b6083e0d-d22c-4ce9-b4d0-4c635ad78e1f": 1
+      }
+    },
+    {
+      "id": "XjpR6VWDw",
+      "cart": {
+        "69d22e7c-9591-4747-922d-f68135f2b32d": 1,
+        "b6083e0d-d22c-4ce9-b4d0-4c635ad78e1f": 1,
+        "480a8610-6ceb-4433-bc34-8b205cf4aa82": 1
       }
     }
   ]
